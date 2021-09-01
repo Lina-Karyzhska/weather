@@ -1,9 +1,33 @@
-html,
-body {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-size: 1vw;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 a {
@@ -11,6 +35,126 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  bottom: -1.25em;
+}
+
+.main {
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+}
+
+.home__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  height: 100%;
+  padding: 0 1em;
+  font-size: 0.75rem;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+.mapPointer {
+  position: relative;
+  top: -20px;
+  left: -10px;
+}
+
+.menu {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+}
+
+.menu__item {
+  font-size: 1rem;
+  flex: 1
+}
+
+.menu__item:hover {
+  text-decoration: underline;
+}
+
+.map {
+  width: 100vw;
+  height: 80vh;
+}
+
+.drawer_left {
+  display: none !important;
+}
+
+@media (max-width: 1100px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__section {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .drawer_left {
+    display: block !important;
+  }
+
+  .drawer_left .MuiDrawer-paperAnchorLeft {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+
+  .drawer_left .menu__item {
+    text-align: start;
+    padding: 5px 20px;
+    flex: none;
+    transition: 0.2s all ease-in;
+    font-size: 1.25rem;
+    margin: 5px 0;
+  }
+
+  .drawer_left .menu__item:hover {
+    background-color: #00000030;
+    text-decoration: none;
+  }
+
+  .drawer_top {
+    display: none !important;
+  }
 }
